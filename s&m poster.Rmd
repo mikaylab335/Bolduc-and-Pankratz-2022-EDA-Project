@@ -1,0 +1,39 @@
+---
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Correlation Between COVID Cases and Vaccination Status Among Different Age Groups in the U.S.
+
+MiKayla Bolduc ^1^ and Shelby Pankratz ^2^
+
+^1, 2^ Biosciences Department, Minnesota State University Moorhead
+
+## Introduction
+
+## Methods
+
+### Data Acquisition
+
+COVID data: Age Group
+
+1.  Go to <https://covid.cdc.gov/covid-data-tracker/#demographics>
+2.  Scroll to "Cases by Age Group"
+3.  Click on the Download Tab
+4.  Click on Data (.csv)
+5.  Save to data folder (cases_by_age_group.csv)
+
+COVID data: Vaccination Status
+
+1. Go to https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic
+2. Scroll to "Age Group" and click on Fully Vaccinated
+3. Click on the Download Tab
+4. Click on Data (.csv)
+5. Save to data folder (age_groups_of_people_fully_vaccinated.csv)
+
+## Results
+
+## Discussion
