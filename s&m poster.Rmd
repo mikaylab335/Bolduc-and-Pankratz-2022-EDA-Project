@@ -45,10 +45,11 @@ COVID data: Age Group
 COVID data: Vaccination Status
 
 1.  Go to <https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic>
-2.  Scroll to "Age Group" and click on Fully Vaccinated
-3.  Click on the Download Tab
-4.  Click on Data (.csv)
-5.  Save to data folder (age_groups_of_people_fully_vaccinated.csv)
+2.  Scroll to "Age Group" 
+3.
+4.  Click on the Download Tab
+5.  Click on Data (.csv)
+6.  Save to data folder (age_groups_of_people_fully_vaccinated.csv)
 
 ## Results
 

@@ -1,39 +1,31 @@
 library(tidyverse)
-library(readr)
-age_groups_of_people_fully_vaccinated <- read_csv("data/age_groups_of_people_fully_vaccinated.csv")
-View(age_groups_of_people_fully_vaccinated)
 
-cases_by_age_group <- read_csv("data/cases_by_age_group.csv")
-View(cases_by_age_group)
+age_groups_of_people_fully_vaccinated <- 
+  read_csv("data/age_groups_of_people_fully_vaccinated.csv", skip=3, 
+           col_names = c("age_group", "fully_vaccinated"), 
+           col_types="c_i___") %>% 
+  print()
 
-# rename
-covid_cases <- read_csv("data/cases_by_age_group.csv")
-covid_cases
+vax_data <- 
+  read_csv("data/COVID-19_Vaccination_Demographics_in_the_United_States_National.csv") %>% 
+  print()
 
-vaccination <- read_csv("data/age_groups_of_people_fully_vaccinated.csv")
-vaccination
+vax_data %>% 
+  filter(Date=="03/27/2022", 
+         str_starts(Demographic_category, "Ages_"), 
+         Demographic_category!="Ages_<12yrs") %>% 
+  mutate(
+    age_group=str_remove(Demographic_category, "Ages_"),
+    age_group = str_replace_all(age_group, "_", " "),
+#    age_group = factor(age_group, levels = c("<5"))
+  ) %>% 
+  select(age_group, Series_Complete_Pop_pct_agegroup)
 
-# remove rows
-vaccination <- vaccination[-c(1,2), ]
-covid_cases <- covid_cases[-c(1,2), ]
-vaccination
-covid_cases
+cases_by_age_group <- 
+  read_csv("data/cases_by_age_group.csv", skip=3,
+           col_names = c("age_group", "covid_cases"),
+           col_types="c_i__") %>%
+  print()
 
-# create new columns in vaccination
-age_groups <- c('5-11', '12-17', '18-24', '25-39', '40-49', '50-64', '65-74', '75+')
-
-number_of_people <- c('18788369', '44619888', '29859542',
-                      '50825458', '28994309', '19527159')
-age_groups
-number_of_people
-
-vaccination <- cbind(age_groups, number_of_people)
-vaccination
-
-# create new columns in covid cases
-age_groups_ <- c('5-11', '12-17', '18-39', '40-49', '50-64', '65-74', '75+)
-
-
-
-
-
+ggplot(data=age_groups_of_people_fully_vaccinated)+
+  geom_col(aes(x=age_group, y=fully_vaccinated))
