@@ -6,26 +6,37 @@ age_groups_of_people_fully_vaccinated <-
            col_types="c_i___") %>% 
   print()
 
+order <- c("5-11", "12-17", "18-24", "25-39", 
+           "40-49", "50-64", "65-74", "75+")
+
+## vaccination
+# raw data
 vax_data <- 
   read_csv("data/COVID-19_Vaccination_Demographics_in_the_United_States_National.csv") %>% 
-  print()
-
-vax_data %>% 
-  filter(Date=="03/27/2022", 
-         str_starts(Demographic_category, "Ages_"), 
-         Demographic_category!="Ages_<12yrs") %>% 
+  filter(
+    Date=="03/27/2022", 
+    str_starts(Demographic_category, "Ages_")
+  ) %>% 
   mutate(
     age_group=str_remove(Demographic_category, "Ages_"),
-    age_group = str_replace_all(age_group, "_", " "),
-#    age_group = factor(age_group, levels = c("<5"))
+    age_group=str_remove(age_group, "_yrs"),
   ) %>% 
-  select(age_group, Series_Complete_Pop_pct_agegroup)
-
-cases_by_age_group <- 
-  read_csv("data/cases_by_age_group.csv", skip=3,
-           col_names = c("age_group", "covid_cases"),
-           col_types="c_i__") %>%
+  filter(!age_group %in% c("<12yrs", "<5yrs", "12-15", "16-17")) %>% 
+  select(age_group, Series_Complete_Pop_pct_agegroup) %>% 
+  mutate(age_fct = factor(age_group, levels = order))%>% 
   print()
+ 
+ggplot(data=vax_data)+
+  geom_col(mapping = aes(x=age_fct, Series_Complete_Pop_pct_agegroup), 
+           fill = "#a6192e") +
+  labs(y="% Fully Vaccinated", x="Age")
 
-ggplot(data=age_groups_of_people_fully_vaccinated)+
-  geom_col(aes(x=age_group, y=fully_vaccinated))
+
+
+ 
+  # + geom_jitter(size=3)+
+  theme_gray(base_size = 24)
+
+
+
+
