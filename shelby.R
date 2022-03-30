@@ -9,6 +9,8 @@ age_groups_of_people_fully_vaccinated <-
 order <- c("5-11", "12-17", "18-24", "25-39", 
            "40-49", "50-64", "65-74", "75+")
 
+read_csv("data/COVID-19_Vaccination_Demographics_in_the_United_States_National.csv")
+
 ## vaccination
 # raw data
 vax_data <- 
@@ -36,7 +38,11 @@ ggplot(data=vax_data)+
  
   # + geom_jitter(size=3)+
   theme_gray(base_size = 24)
-
-
+  
+## cases
+# raw data
+case_data <- read_csv("data/COVID-19_Vaccination_and_Case_Trends_by_Age_Group__United_States (1).csv") %>% 
+ select(-c(Administered_Dose1_pct_agegroup, Series_Complete_Pop_pct_agegroup, '7-day_avg_group_cases_per_100k')) %>% 
+  print()
 
 
