@@ -29,33 +29,24 @@ vax_data <-
   ) %>% 
   select(date, age_group, per_vax) %>%
   print()
- 
+
+#column graph
 vax_data %>% 
   filter(date == max(date)) %>% 
   ggplot()+
   geom_col(mapping = aes(x=age_group, per_vax), 
            fill = "#a6192e") +
-  labs(y="% Fully Vaccinated", x="Age Range", title = "Vax data on March 27, 2022")
+  labs(y="% Fully Vaccinated", x="Age Range", title = "Vaccination Status as of March 27, 2022")
 
   # + geom_jitter(size=3)+
   theme_gray(base_size = 24)
 
+# line graph 
 vax_data %>% 
   ggplot(aes(x = date, y = per_vax, color = age_group)) +
   geom_line()
     
 ## cases
-# raw data
-case_data <- read_csv("data/cases.csv") %>% 
-  select(-c(deaths)) %>% 
-  print()
-
-ggplot(case_data)+
-  geom_col(mapping = aes(x=date, cases),
-           fill = "#a6192e") +
-  labs(y="# of cases", "Dates")
-
-
 # raw data w age groups
 library(readxl)
 cases_by_age <- 
@@ -66,15 +57,19 @@ cases_by_age <-
   mutate(date = as.Date(date)) %>% 
   print()
 
- 
+# column graph
 cases_by_age %>%
   # filter(date == max(date)) %>%    # choose the last date
-  filter(date == as.Date("2022-03-20") | date == as.Date("2021-03-20")) %>%   # choose a particular date
+  filter(date == as.Date("2022-03-26") | date == as.Date("2021-12-01")) %>%   # choose a particular date
   ggplot()+
   geom_col(mapping = aes(x=age_range, y=total_cases, fill=as.factor(date)),
            position="dodge2") +
-  labs(y="# of Cases", x="Age Range")
+  labs(y="# of Cases", x="Age Range", title="COVID-19 Cases Among  Age Groups") 
 
+# multiple graphs 
 cases_by_age %>% 
-  ggplot(aes(x = date, y = total_cases, color = age_range)) +
-  geom_line()
+  filter(date == as.Date("2022-03-26") | date == as.Date("2021-12-01")) %>% 
+ggplot() +
+  geom_col(mapping = aes(x = date, y = total_cases),
+           fill = "#a6192e") +
+  facet_wrap(~ age_range)
