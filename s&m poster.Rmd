@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Correlation Between COVID Cases and Vaccination Status Among Different Age Groups in the U.S.
 
-MiKayla Bolduc ^1^ and Shelby Pankratz ^2^
+Mikayla Bolduc^1^ and Shelby Pankratz^2^
 
 ^1, 2^ Biosciences Department, Minnesota State University Moorhead
 
@@ -54,6 +54,7 @@ COVID data: Vaccination Status
 ## Results
 
 ## Discussion
+We were unable to run a statistical test on this data due to the age groups being different between the different data sets that we used. 
 
 ## References/Acknowledgements
 We would like to give a big thanks to Dr. Merkord for assisting us with this project. 
