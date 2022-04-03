@@ -19,16 +19,16 @@ We will be using data from the EDA to look for relationships between positive CO
 
 COVID data: Age Group
 
-1. Go to https://covid.cdc.gov/covid-data-tracker/#demographics
-2. Scroll to "Cases by Age Group"
-3. Click on the Download Tab
-4. Click on Data (.csv)
+1. Go to https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-and-Case-Trends-by-Age-Group-/gxj9-t96f
+2. Scroll to "View Data"
+3. Click on the Export Tab
+4. Click on CSV
 5. Save to data folder (cases_by_age_group.csv)
 
 COVID data: Vaccination Status
 
 1. Go to https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic
-2. Scroll to "Age Group" and click on Fully Vaccinated
-3. Click on the Download Tab
-4. Click on Data (.csv)
+2.2. Scroll to "View Data"
+3. Click on the Export Tab
+4. Click on CSV
 5. Save to data folder (age_groups_of_people_fully_vaccinated.csv)
