@@ -23,12 +23,12 @@ COVID data: Age Group
 2. Scroll to "View Data"
 3. Click on the Export Tab
 4. Click on CSV
-5. Save to data folder (cases_by_age_group.csv)
+5. Save to data folder (COVID-19_Vaccination_and_Case_Trends_by_Age_Group__United_States.csv)
 
 COVID data: Vaccination Status
 
 1. Go to https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic
-2.2. Scroll to "View Data"
+2. Scroll to "View Data"
 3. Click on the Export Tab
 4. Click on CSV
 5. Save to data folder (age_groups_of_people_fully_vaccinated.csv)
