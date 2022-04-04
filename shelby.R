@@ -1,5 +1,6 @@
 library(tidyverse)
 
+
 if (!dir.exists("figs")) dir.create("figs")
 
 ## vaccination
