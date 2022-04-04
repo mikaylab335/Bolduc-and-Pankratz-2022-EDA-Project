@@ -14,15 +14,7 @@ MiKayla Bolduc ^1^ and Shelby Pankratz ^2^
 
 ## Abstract
 
--   Observed data sets of age groups, vaccination status, and number of COVID cases in the U.S.
-
--   Compared the correlation between vaccination status and number of COVID cases in the U.S.
-
--   Looked at the rates of vaccination status among different age groups in the U.S.
-
-## Introduction
-
-COVID-19 vaccinations in the U.S. first became available to select populations, such as the elderly and immunocompromised, back in June 2020, right after COVID-19 broke out in March. Fast forward to present day where vaccinations are available to everyone, along with the development of a booster shot. However, since then, vaccines have become a very controversial topic. 
+COVID-19 vaccinations in the U.S. first became available to select populations, such as the elderly and immunocompromised, back in June 2020, right after COVID-19 was declared a pandemic in March. Fast forward to present day where vaccinations are available to everyone, along with the development of a booster shot. However, since then, vaccines have become a very controversial topic. 
 
 The COVID-19 vaccines were the fastest vaccines to get approved for use. This has led to many people wondering, how effective are these vaccines?
 
@@ -34,27 +26,32 @@ We will be using data from COVID Data Tracker, which is a website managed by the
 
 ### Data Acquisition
 
-COVID data: Age Group
+COVID data: Cases
 
-1.  Go to <https://covid.cdc.gov/covid-data-tracker/#demographics>
-2.  Scroll to "Cases by Age Group"
-3.  Click on the Download Tab
-4.  Click on Data (.csv)
-5.  Save to data folder (cases_by_age_group.csv)
+1.  Go to https://www.tn.gov/health/cedep/ncov/data/downloadable-datasets.html
+2. Scroll to the "Daily Age Group Outcomes" download and click 
+3. Click on "Show in folder"
+4. Copy data set
+5. Paste in data folder (Public_Dataset_Age_1_)
 
 COVID data: Vaccination Status
 
-1.  Go to <https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic>
-2.  Scroll to "Age Group" 
-3.
-4.  Click on the Download Tab
-5.  Click on Data (.csv)
-6.  Save to data folder (age_groups_of_people_fully_vaccinated.csv)
+1. Go to https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-Demographics-in-the-United-St/km4m-vcsb
+2. Scroll to "View Data"
+3. Click on the Export Tab
+4. Click on CSV
+5. Save to data folder (COVID_19_Vaccination_Demographics_in_the_United_States_National_1_.csv)
+
+- Print both data sets into an Rscript in R
+- Filter data set to get the variables that are needed for this project
+- Graph the data sets 
 
 ## Results
 
+
 ## Discussion
+- 
 
 ## References/Acknowledgements
-We would like to give a big thanks to Dr. Merkord for assisting us with this project. 
+We would like to give a big thanks to Dr. Chris Merkord for assisting us with this project, and everyone else who was indirectly involved. 
 
